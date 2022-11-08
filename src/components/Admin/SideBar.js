@@ -14,7 +14,10 @@ import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } fro
 import sidebarBg from '../../asset/bg2.jpg';
 import { GiCheckeredFlag } from "react-icons/gi"
 import { MdOutlinePedalBike } from "react-icons/md"
+import { HiAcademicCap } from "react-icons/hi2";
 // import {DiReact} from "react-icons/gi"
+import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
 const SideBar = (props) => {
   const { image, collapsed, toggled, handleToggleSidebar } = props
   return (
@@ -39,8 +42,8 @@ const SideBar = (props) => {
               whiteSpace: 'nowrap',
             }}
           >
-            <MdOutlinePedalBike size={'3em'} color={"00bfff"} />
-            <span>Duy Đan</span>
+         
+            <NavLink   to='/' className='nav-link ' > <HiAcademicCap size={'3em'} color={"00bfff"} />  Duy Đan </NavLink>
           </div>
         </SidebarHeader>
 
@@ -48,9 +51,10 @@ const SideBar = (props) => {
           <Menu iconShape="circle">
             <MenuItem
               icon={<FaTachometerAlt />}
-
+                
             >
-              Dashboard
+                 Dashboard
+            <Link  to="/Admin"/>
             </MenuItem>
 
           </Menu>
@@ -61,7 +65,9 @@ const SideBar = (props) => {
               icon={<FaGem />}
               title="Features"
             >
-              <MenuItem> Quản Lý Users</MenuItem>
+              <MenuItem> Quản Lý Users
+              <Link  to="/Admin/manage-user"/>
+               </MenuItem>
               <MenuItem>Quản Lý Bài Quiz</MenuItem>
               <MenuItem> Quản Lý câu Hỏi</MenuItem>
             </SubMenu>
